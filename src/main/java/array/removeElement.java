@@ -39,18 +39,58 @@ public class removeElement {
     public static void main(String[] args) {
         int[] nums = {3, 2, 2, 3};
         int val = 3;
-        int count = getNewArr(nums, val);
+        int count = getNewArrLeftAndRight(nums, val);
         System.out.println("新数组: " + Arrays.toString(nums));
         System.out.println("新数组长度: " + count);
     }
 
+    // 自己写的
     private static int getNewArr(int[] nums, int val) {
-        
+        if (nums == null || nums.length == 0) return 0;
+        int i = 0;
+        for (int j = nums.length-1; j >= i; j--) {
+            if (nums[i] != val) {
+                i++;
+                j++;
+                continue;
+            }
+            if (nums[i] == val && nums[j] != val){
+                int temp = nums[i];
+                nums[i] = nums[j];
+                nums[j] = temp;
+                i++;
+            }
+        }
 
-
-
-        return 0;
+        return i;
     }
 
+
+    // 快慢双指针(当要删除的元素很多时)
+    private static int getNewArrSpeed(int[] nums, int val) {
+        int i = 0;
+        for (int j = 0; j < nums.length; j++) {
+            if (nums[j] != val){
+                nums[i] = nums[j];
+                i++;
+            }
+        }
+        return i;
+    }
+
+    // 左右双指针(当要删除的元素很少时)
+    private static int getNewArrLeftAndRight(int[] nums, int val) {
+        int i = 0;
+        int n = nums.length;
+        while (i < n) {
+            if (nums[i] == val) {
+                nums[i] = nums[n - 1];
+                n--;
+            } else {
+                i++;
+            }
+        }
+        return n;
+    }
 
 }

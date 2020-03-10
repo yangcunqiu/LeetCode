@@ -40,7 +40,7 @@ import java.util.Arrays;
  * date: 2020/3/9 16:27
  * @since JDK 1.8
  */
-public class smallerNumbersThanCurrent {
+public class SmallerNumbersThanCurrent {
 
     public static void main(String[] args) {
         int[] nums = {8, 1, 2, 2, 3};

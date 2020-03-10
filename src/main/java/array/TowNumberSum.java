@@ -22,7 +22,7 @@ import java.util.Map;
  * @since JDK 1.8
  */
 @SuppressWarnings("all")
-public class towNumberSum {
+public class TowNumberSum {
 
     public static void main(String[] args) {
         int[] nums = {2, 7, 11, 15};

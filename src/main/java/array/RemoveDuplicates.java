@@ -29,7 +29,7 @@ import java.util.Arrays;
  * date: 2020/3/9 16:56
  * @since JDK 1.8
  */
-public class removeDuplicates {
+public class RemoveDuplicates {
 
     public static void main(String[] args) {
         int[] nums = {0, 0, 1, 1, 1, 2, 2, 3, 3, 4};

@@ -34,7 +34,7 @@ import java.util.Arrays;
  * date: 2020/3/10 10:10
  * @since JDK 1.8
  */
-public class removeElement {
+public class RemoveElement {
 
     public static void main(String[] args) {
         int[] nums = {3, 2, 2, 3};

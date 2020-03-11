@@ -33,10 +33,11 @@ public class SearchInsert {
     public static void main(String[] args) {
         int[] nums = {1, 3, 5, 6};
         int target = 5;
-        int index = getIndex(nums, target);
+        int index = getIndexDichotomy(nums, target);
         System.out.println(index);
     }
 
+    // 暴力法
     private static int getIndex(int[] nums, int target) {
         if (nums == null || nums.length == 0) return 0;
 
@@ -48,4 +49,27 @@ public class SearchInsert {
 
         return nums.length;
     }
+
+    // 二分法
+    private static int getIndexDichotomy(int[] nums, int target) {
+        if (nums == null || nums.length == 0) return 0;
+
+        int left = 0;
+        int right = nums.length-1;
+
+        while (left <= right){
+            int mid = (right + left) / 2;
+            if (target < nums[mid]) {
+                right = mid - 1;
+            } else if (target > nums[mid]) {
+                left = mid + 1;
+            } else {
+                return mid;
+            }
+        }
+
+        return left;
+
+    }
+
 }
